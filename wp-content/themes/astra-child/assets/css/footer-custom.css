@@ -1,0 +1,186 @@
+/* ========================================
+   FOOTER CUSTOMIZATION - PWA STYLE
+   ======================================== */
+
+/* Override Astra Footer */
+.custom-footer,
+.site-footer {
+    background: var(--bg-secondary, #F5F5F5) !important;
+    padding: var(--spacing-xxl, 4rem) 0 var(--spacing-lg, 2rem) !important;
+    border-top: 1px solid rgba(235, 10, 30, 0.1);
+    margin-top: var(--spacing-xxl, 4rem);
+}
+
+body.dark-mode .custom-footer,
+body.dark-mode .site-footer {
+    background: var(--color-dark-secondary, #2D2D2D) !important;
+    border-top-color: rgba(235, 10, 30, 0.2);
+}
+
+/* Footer Content */
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-xl, 3rem);
+    margin-bottom: var(--spacing-xl, 3rem);
+}
+
+/* Footer Section */
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md, 1.5rem);
+}
+
+.footer-section h4 {
+    font-size: var(--font-size-lg, 1.125rem);
+    font-weight: 700;
+    color: var(--text-primary, #1A1A1A);
+    margin: 0 0 var(--spacing-sm, 1rem) 0;
+}
+
+body.dark-mode .footer-section h4 {
+    color: var(--color-white, #FFFFFF);
+}
+
+.footer-section p {
+    font-size: var(--font-size-base, 1rem);
+    color: var(--text-secondary, #666666);
+    line-height: 1.6;
+    margin: 0;
+}
+
+body.dark-mode .footer-section p {
+    color: var(--color-gray-light, #999999);
+}
+
+.footer-section a {
+    color: var(--text-secondary, #666666);
+    text-decoration: none;
+    transition: color var(--transition-base, 300ms ease-in-out);
+}
+
+body.dark-mode .footer-section a {
+    color: var(--color-gray-light, #999999);
+}
+
+.footer-section a:hover {
+    color: var(--color-primary, #EB0A1E);
+}
+
+/* Footer Links */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm, 1rem);
+}
+
+.footer-links li {
+    margin: 0;
+}
+
+.footer-links a {
+    display: inline-block;
+    padding: var(--spacing-xs, 0.5rem) 0;
+    position: relative;
+}
+
+.footer-links a::before {
+    content: '→';
+    margin-left: var(--spacing-xs, 0.5rem);
+    opacity: 0;
+    transition: all var(--transition-base, 300ms ease-in-out);
+    transform: translateX(-5px);
+}
+
+.footer-links a:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--spacing-lg, 2rem);
+    border-top: 1px solid rgba(235, 10, 30, 0.1);
+    flex-wrap: wrap;
+    gap: var(--spacing-md, 1.5rem);
+}
+
+.footer-bottom p {
+    font-size: var(--font-size-sm, 0.875rem);
+    color: var(--text-secondary, #666666);
+    margin: 0;
+}
+
+body.dark-mode .footer-bottom p {
+    color: var(--color-gray-light, #999999);
+}
+
+body.dark-mode .footer-bottom {
+    border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+/* PWA Status Indicator */
+.pwa-status {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs, 0.5rem);
+    font-size: var(--font-size-sm, 0.875rem);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full, 9999px);
+    background: var(--color-success, #10B981);
+    display: inline-block;
+    animation: pulse 2s ease-in-out infinite;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+.status-dot.offline {
+    background: var(--color-gray, #666666);
+    box-shadow: none;
+    animation: none;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.2);
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg, 2rem);
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-section h4 {
+        font-size: var(--font-size-base, 1rem);
+    }
+}
+
+/* Hide Default Astra Footer Elements if Custom Footer Exists */
+.site-footer.has-custom-footer .ast-footer-copyright,
+.site-footer.has-custom-footer .ast-footer-social {
+    display: none;
+}
+

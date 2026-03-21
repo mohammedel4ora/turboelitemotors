@@ -1,0 +1,388 @@
+/* ========================================
+   PRODUCTS GRID ENHANCEMENTS
+   ======================================== */
+
+/* Enhanced Product Card */
+.product-card {
+    background: var(--bg-secondary) !important;
+    border-radius: var(--radius-xl) !important;
+    overflow: hidden !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    border: 2px solid rgba(235, 10, 30, 0.1) !important;
+    position: relative !important;
+}
+
+/* Stronger Hover Effect */
+.product-card:hover {
+    transform: translateY(-10px) scale(1.02) !important;
+    box-shadow: 0 20px 50px rgba(235, 10, 30, 0.5) !important;
+    border-color: var(--color-primary) !important;
+}
+
+/* Product Image Enhancement */
+.product-image {
+    position: relative !important;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%) !important;
+    border-bottom: 2px solid rgba(235, 10, 30, 0.1) !important;
+    transition: all var(--transition-base) !important;
+}
+
+.product-card:hover .product-image {
+    border-color: var(--color-primary) !important;
+}
+
+.product-image img {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.1) !important;
+}
+
+/* Enhanced Out of Stock Badge */
+.out-of-stock-badge {
+    background: linear-gradient(135deg, #DC2626 0%, #991B1B 100%) !important;
+    font-weight: 800 !important;
+    font-size: 0.7rem !important;
+    padding: 0.4rem 0.8rem !important;
+    border-radius: var(--radius-md) !important;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.5) !important;
+    animation: pulse 2s ease-in-out infinite !important;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* Product Details Enhancement */
+.product-details {
+    padding: 1rem !important;
+}
+
+/* Product Name - Optimized Spacing */
+.product-name {
+    font-size: 1.25rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 0.5rem !important;
+    line-height: 1.4 !important;
+}
+
+.product-name a {
+    transition: all var(--transition-fast) !important;
+}
+
+.product-name a:hover {
+    color: var(--color-primary) !important;
+    text-decoration: none !important;
+}
+
+/* Product SKU Enhancement */
+.product-sku {
+    font-size: var(--font-size-sm) !important;
+    color: var(--text-secondary) !important;
+    background: rgba(235, 10, 30, 0.05) !important;
+    padding: 0.25rem 0.5rem !important;
+    border-radius: var(--radius-sm) !important;
+    display: inline-block !important;
+    margin-bottom: 0.4rem !important;
+}
+
+/* Product Price - Optimized Spacing */
+.product-price {
+    font-size: 1.75rem !important;
+    font-weight: 800 !important;
+    color: var(--color-primary) !important;
+    margin-bottom: 0.5rem !important;
+    text-shadow: 0 2px 10px rgba(235, 10, 30, 0.2) !important;
+}
+
+/* Stock Status Enhancement */
+.product-stock {
+    font-size: var(--font-size-sm) !important;
+    font-weight: 700 !important;
+    padding: 0.3rem 0.6rem !important;
+    border-radius: var(--radius-md) !important;
+    display: inline-block !important;
+    margin-bottom: 0.75rem !important;
+}
+
+.product-stock.in-stock {
+    color: white !important;
+    background: linear-gradient(135deg, var(--color-success) 0%, #059669 100%) !important;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3) !important;
+}
+
+.product-stock.out-of-stock {
+    color: white !important;
+    background: linear-gradient(135deg, #6B7280 0%, #4B5563 100%) !important;
+}
+
+/* Product Actions - Single Button Layout (View Details Hidden) */
+.product-actions {
+    padding: 0 1rem 1rem !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0 !important;
+}
+
+/* Hide "View Details" Button Globally (Desktop + Mobile) */
+.product-actions .btn-outline {
+    display: none !important;
+}
+
+/* "Add to Cart" Button - Full Width */
+.product-actions .btn {
+    flex: 1 1 100% !important;
+    font-weight: 700 !important;
+    font-size: 1rem !important;
+    padding: 0.75rem 1rem !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    white-space: nowrap !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 48px !important;
+}
+
+/* "إضافة للسلة" Button - Enhanced Primary Style */
+.product-actions .btn-primary {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%) !important;
+    color: white !important;
+    border: none !important;
+    font-size: 1.05rem !important;
+    font-weight: 800 !important;
+    box-shadow: 0 4px 15px rgba(235, 10, 30, 0.4) !important;
+}
+
+.product-actions .btn-primary:hover {
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%) !important;
+    transform: translateY(-3px) scale(1.02) !important;
+    box-shadow: 0 8px 25px rgba(235, 10, 30, 0.6) !important;
+}
+
+.product-actions .btn-primary:active {
+    transform: translateY(-1px) scale(0.98) !important;
+}
+
+/* NEW: Product Badges */
+.product-badge {
+    position: absolute;
+    top: var(--spacing-sm);
+    left: var(--spacing-sm);
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-md);
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    z-index: 5;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-badge.new {
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    color: white;
+}
+
+.product-badge.sale {
+    background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+    color: white;
+}
+
+.product-badge.featured {
+    background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+    color: white;
+}
+
+/* Results Header Enhancement */
+.results-header {
+    margin-bottom: calc(var(--spacing-lg) * 1.5) !important;
+    padding-bottom: var(--spacing-md) !important;
+    border-bottom: 2px solid rgba(235, 10, 30, 0.1) !important;
+}
+
+.results-title {
+    font-size: 2rem !important;
+    font-weight: 800 !important;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--color-gray) 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+.results-count {
+    font-size: var(--font-size-base) !important;
+    font-weight: 600 !important;
+    padding: var(--spacing-sm) var(--spacing-lg) !important;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%) !important;
+    color: white !important;
+    box-shadow: 0 2px 8px rgba(235, 10, 30, 0.3) !important;
+}
+
+/* Products Footer Enhancement */
+.products-footer {
+    margin-top: calc(var(--spacing-xl) * 1.5) !important;
+}
+
+.products-footer .btn-secondary {
+    background: var(--bg-secondary) !important;
+    border: 2px solid var(--color-primary) !important;
+    color: var(--text-primary) !important;
+    padding: var(--spacing-md) calc(var(--spacing-xl) * 2) !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    transition: all var(--transition-base) !important;
+}
+
+.products-footer .btn-secondary:hover {
+    background: var(--color-primary) !important;
+    color: white !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 6px 20px rgba(235, 10, 30, 0.4) !important;
+}
+
+/* Animation on Scroll */
+@keyframes fadeInUpProduct {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.product-card {
+    animation: fadeInUpProduct 0.6s ease-out backwards;
+}
+
+.product-card:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.product-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.product-card:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+.product-card:nth-child(4) {
+    animation-delay: 0.2s;
+}
+
+.product-card:nth-child(5) {
+    animation-delay: 0.25s;
+}
+
+.product-card:nth-child(6) {
+    animation-delay: 0.3s;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .product-card {
+        transform: none !important;
+    }
+
+    .product-card:hover {
+        transform: translateY(-5px) !important;
+    }
+
+    .product-name {
+        font-size: 1rem !important;
+        margin-bottom: 0.35rem !important;
+    }
+
+    .product-price {
+        font-size: 1.35rem !important;
+        margin-bottom: 0.4rem !important;
+    }
+
+    .product-sku {
+        margin-bottom: 0.35rem !important;
+    }
+
+    .product-stock {
+        margin-bottom: 0.5rem !important;
+    }
+
+    .product-details {
+        padding: 0.75rem !important;
+    }
+
+    .product-actions {
+        flex-direction: column !important;
+        gap: 0 !important;
+        padding: 0 0.75rem 0.75rem !important;
+    }
+
+    /* Hide "View Details" button on mobile */
+    .product-actions .btn-outline {
+        display: none !important;
+    }
+
+    /* Make "Add to Cart" button smaller and full width */
+    .product-actions .btn {
+        width: 100% !important;
+        height: 36px !important;
+        font-size: 0.85rem !important;
+        padding: 0.45rem 0.75rem !important;
+        flex: 1 1 auto !important;
+    }
+
+    .product-actions .btn-primary {
+        font-size: 0.9rem !important;
+        font-weight: 700 !important;
+    }
+}
+
+/* Extra Small Mobile (iPhone SE, small phones) */
+@media (max-width: 480px) {
+    .product-name {
+        font-size: 0.95rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 0.3rem !important;
+    }
+
+    .product-price {
+        font-size: 1.25rem !important;
+        margin-bottom: 0.35rem !important;
+    }
+
+    .product-details {
+        padding: 0.65rem !important;
+    }
+
+    .product-actions {
+        padding: 0 0.65rem 0.65rem !important;
+    }
+
+    .product-actions .btn {
+        height: 34px !important;
+        font-size: 0.8rem !important;
+        padding: 0.4rem 0.65rem !important;
+    }
+
+    .product-actions .btn-primary {
+        font-size: 0.85rem !important;
+    }
+
+    .product-sku,
+    .product-stock {
+        font-size: 0.7rem !important;
+        padding: 0.2rem 0.4rem !important;
+        margin-bottom: 0.3rem !important;
+    }
+}

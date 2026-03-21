@@ -1,0 +1,228 @@
+/* ========================================
+   YMM WIDGET ENHANCED STYLING - OVERRIDE
+   Add this file to override YMM plugin styles
+   ======================================== */
+
+/* YMM Widget Container - Enhanced */
+.ymm-widget-wrapper .ymm-selector-form,
+.ymm-widget-wrapper .alrajhi-ymm-container,
+.ymm-widget-wrapper form {
+    background: var(--bg-primary) !important;
+    padding: var(--spacing-xl) !important;
+    border-radius: var(--radius-xl) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12) !important;
+    border: 2px solid rgba(235, 10, 30, 0.15) !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: var(--spacing-md) !important;
+    align-items: flex-end !important;
+    justify-content: center !important;
+}
+
+/* Labels */
+.ymm-widget-wrapper label,
+.ymm-widget-wrapper .ymm-selector-form label {
+    font-weight: 600 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--text-secondary) !important;
+    margin-bottom: var(--spacing-xs) !important;
+    display: block !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Select Boxes - Complete Redesign */
+.ymm-widget-wrapper select,
+.ymm-widget-wrapper .ymm-selector-form select {
+    padding: 0 45px 0 35px !important;
+    /* Zero vertical padding, space for arrow (left) and text (right) */
+    background: var(--bg-secondary) !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23EB0A1E' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: left 12px center !important;
+    background-size: 20px !important;
+    border: 2px solid rgba(235, 10, 30, 0.25) !important;
+    border-radius: var(--radius-lg) !important;
+    color: var(--text-primary) !important;
+    font-size: var(--font-size-base) !important;
+    font-weight: 600 !important;
+    min-width: 220px !important;
+    height: 55px !important;
+    line-height: 55px !important;
+    /* Center text vertically */
+    cursor: pointer !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    transition: all var(--transition-base) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+    text-align: right !important;
+    /* Align text to right for Arabic */
+}
+
+/* Select Hover & Focus */
+.ymm-widget-wrapper select:hover,
+.ymm-widget-wrapper .ymm-selector-form select:hover {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 4px 12px rgba(235, 10, 30, 0.2) !important;
+    transform: translateY(-2px) !important;
+}
+
+.ymm-widget-wrapper select:focus,
+.ymm-widget-wrapper .ymm-selector-form select:focus {
+    outline: none !important;
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 4px rgba(235, 10, 30, 0.1),
+        0 4px 12px rgba(235, 10, 30, 0.3) !important;
+}
+
+/* Disabled State */
+.ymm-widget-wrapper select:disabled,
+.ymm-widget-wrapper .ymm-selector-form select:disabled {
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+    background-color: var(--bg-secondary) !important;
+    border-color: rgba(100, 100, 100, 0.2) !important;
+}
+
+.ymm-widget-wrapper select:disabled:hover {
+    transform: none !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+
+
+/* Submit Button - Enhanced (Catch-all selector) */
+.ymm-widget-wrapper input[type="submit"],
+.ymm-widget-wrapper button[type="submit"],
+.ymm-widget-wrapper .ymm-submit,
+.ymm-widget-wrapper button,
+.ymm-widget-wrapper input[type="button"] {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%) !important;
+    color: white !important;
+    border: none !important;
+    padding: var(--spacing-md) var(--spacing-xl) !important;
+    border-radius: var(--radius-lg) !important;
+    cursor: pointer !important;
+    font-weight: 700 !important;
+    font-size: var(--font-size-lg) !important;
+    min-width: 200px !important;
+    width: 100% !important;
+    /* Force full width based on user image preference */
+    height: 55px !important;
+    transition: all var(--transition-base) !important;
+    box-shadow: 0 4px 15px rgba(235, 10, 30, 0.4) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    margin-top: 10px !important;
+}
+
+/* Fix YMM Content Width (Fill Container) */
+#ymm_content_1 .block-content {
+    width: 100% !important;
+    flex-grow: 1 !important;
+}
+
+
+/* Button Hover */
+.ymm-widget-wrapper input[type="submit"]:hover,
+.ymm-widget-wrapper button[type="submit"]:hover,
+.ymm-widget-wrapper .ymm-submit:hover,
+.ymm-widget-wrapper button:hover,
+.ymm-widget-wrapper input[type="button"]:hover {
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%) !important;
+    box-shadow: 0 6px 25px rgba(235, 10, 30, 0.6) !important;
+    transform: translateY(-3px) scale(1.02) !important;
+}
+
+/* ============================================
+   DARK MODE OVERRIDES
+   (Base handled by dark-mode-theme.css)
+   ============================================ */
+
+body.dark-mode .ymm-widget-wrapper select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23FF1F33' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+    color: var(--text-primary) !important;
+    background-color: var(--bg-secondary) !important;
+    border-color: var(--border-color) !important;
+    -webkit-text-fill-color: var(--text-primary) !important;
+}
+
+body.dark-mode .ymm-widget-wrapper select option {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+}
+
+body.dark-mode .ymm-widget-wrapper select:focus,
+body.dark-mode .ymm-widget-wrapper select:active,
+body.dark-mode .ymm-widget-wrapper select:checked {
+    color: var(--text-primary) !important;
+}
+
+/* Fix Button Centering */
+.ymm-widget-wrapper td.ymm-td-button,
+.ymm-widget-wrapper .ymm-submit-wrapper {
+    text-align: center !important;
+    width: 100% !important;
+    display: block !important;
+    /* Force block to ensure full width container behavior */
+}
+
+/* Fix "Or search text" label */
+.ymm-widget-wrapper .ymm-label-search-text,
+.ymm_search_text_label {
+    width: 100% !important;
+    text-align: right !important;
+    color: var(--text-secondary);
+    font-size: 0.9rem !important;
+    margin: 10px 0 5px !important;
+    display: block !important;
+}
+
+body.dark-mode .ymm-widget-wrapper .ymm-label-search-text,
+body.dark-mode .ymm_search_text_label {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Fix Bottom Text Input (if present) */
+.ymm-widget-wrapper input[type="text"] {
+    padding: var(--spacing-md) !important;
+    background: var(--bg-secondary) !important;
+    border: 2px solid rgba(235, 10, 30, 0.15) !important;
+    border-radius: var(--radius-lg) !important;
+    color: var(--text-primary) !important;
+    height: 55px !important;
+    flex: 1 !important;
+}
+
+body.dark-mode .ymm-widget-wrapper input[type="text"] {
+    color: white !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .ymm-widget-wrapper .ymm-selector-form,
+    .ymm-widget-wrapper .alrajhi-ymm-container,
+    .ymm-widget-wrapper form {
+        flex-direction: column !important;
+        padding: var(--spacing-md) !important;
+        align-items: stretch !important;
+        /* Fix alignment */
+    }
+
+    .ymm-widget-wrapper select,
+    .ymm-widget-wrapper input[type="submit"],
+    .ymm-widget-wrapper button[type="submit"],
+    .ymm-widget-wrapper input[type="text"] {
+        width: 100% !important;
+        min-width: 100% !important;
+    }
+
+    /* Ensure button doesn't overlap text input visually */
+    .ymm-widget-wrapper .ymm-submit-wrapper {
+        width: 100% !important;
+        margin-top: 10px !important;
+    }
+}

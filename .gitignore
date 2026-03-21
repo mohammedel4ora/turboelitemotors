@@ -1,0 +1,57 @@
+# WordPress Core
+wp-admin/
+wp-includes/
+wp-*.php
+index.php
+license.txt
+readme.html
+xmlrpc.php
+
+# WordPress Content
+wp-content/*
+!wp-content/themes/
+!wp-content/plugins/
+!wp-content/mu-plugins/
+
+# Specific Themes & Plugins (Ignore third-party, keep custom)
+# Default themes
+wp-content/themes/twentytwentyfour/
+wp-content/themes/twentytwentythree/
+wp-content/themes/twentytwentytwo/
+wp-content/themes/twentytwentyone/
+wp-content/themes/twentytwenty/
+wp-content/themes/astra/
+
+# WHITELIST: custom child theme
+!wp-content/themes/astra-child/
+
+# Plugins (Excluding third-party from version control is best practice)
+wp-content/plugins/*
+!wp-content/plugins/your-custom-plugin/
+
+# Local/Environment Specific
+wp-config.php
+.htaccess
+sitemap.xml
+sitemap.xml.gz
+local-xdebuginfo.php
+llms.txt
+
+# Logs and Caches
+*.log
+wp-content/cache/
+wp-content/backups/
+wp-content/upgrade/
+wp-content/uploads/
+
+# IDE & OS Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Other
+node_modules/
+npm-debug.log
+error_log
+pcache-config.php

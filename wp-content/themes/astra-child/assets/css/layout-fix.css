@@ -1,0 +1,78 @@
+/* ========================================
+   LAYOUT FIXES & YMM DUPLICATES REMOVAL
+   ======================================== */
+
+/* Full Width Page Wrapper */
+.pwa-page-wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hide Astra Sidebar */
+.page-template-template-homepage-pwa #secondary,
+.page-template-template-homepage-pwa .widget-area,
+.page-template-template-homepage-pwa aside {
+    display: none !important;
+}
+
+/* Force Full Width Content */
+.page-template-template-homepage-pwa #primary,
+.page-template-template-homepage-pwa .site-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* ========================================
+   HIDE DUPLICATE YMM WIDGETS
+   ======================================== */
+
+/* Hide YMM in Header */
+.site-header .ymm-selector,
+.site-header .alrajhi-ymm-container,
+header .ymm-selector,
+header .alrajhi-ymm-container {
+    display: none !important;
+}
+
+/* Hide YMM in Sidebar (already hidden with sidebar) */
+#secondary .ymm-selector,
+#secondary .alrajhi-ymm-container,
+.widget-area .ymm-selector,
+.widget-area .alrajhi-ymm-container {
+    display: none !important;
+}
+
+/* Hide YMM Plugin Auto-injected widgets (keep only our custom one) */
+.ymm-selector:not(.ymm-widget-wrapper .ymm-selector),
+.alrajhi-ymm-container:not(.ymm-widget-wrapper .alrajhi-ymm-container) {
+    display: none !important;
+}
+
+/* Only Show YMM in Our Designated Section */
+.ymm-search-section .ymm-widget-wrapper .ymm-selector,
+.ymm-search-section .ymm-widget-wrapper .alrajhi-ymm-container,
+.ymm-search-section .ymm-widget-wrapper form {
+    display: flex !important;
+}
+
+/* Remove Extra Spacing from Astra */
+.page-template-template-homepage-pwa .ast-container {
+    max-width: 100% !important;
+    padding: 0 !important;
+}
+
+/* Fix Content Container */
+.page-template-template-homepage-pwa .entry-content {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Remove Astra Default Margins */
+.page-template-template-homepage-pwa .ast-article-single {
+    padding: 0 !important;
+    margin: 0 !important;
+}

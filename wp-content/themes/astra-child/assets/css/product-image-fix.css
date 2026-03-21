@@ -1,0 +1,22 @@
+/* ========================================
+   PRODUCT IMAGE FIX - FULL SIZE
+   ======================================== */
+
+/* Force images to fill container completely */
+.product-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Ensure product-image has proper dimensions */
+.product-image {
+    padding: 0 !important;
+}
+
+/* Reduce scale on hover to avoid cropping */
+.product-card:hover .product-image img {
+    transform: scale(1.05) !important;
+}

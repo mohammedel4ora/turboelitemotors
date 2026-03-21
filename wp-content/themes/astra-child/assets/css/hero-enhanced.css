@@ -1,0 +1,149 @@
+/* ========================================
+   HERO SECTION ENHANCEMENTS
+   ======================================== */
+
+/* Enhanced Hero Container - Perfect Vertical Centering */
+.pwa-hero {
+    min-height: 650px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Enhanced Background Gradient - Stronger */
+.hero-bg {
+    background:
+        radial-gradient(ellipse at 20% 50%, rgba(235, 10, 30, 0.25) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 50%, rgba(235, 10, 30, 0.2) 0%, transparent 60%),
+        linear-gradient(135deg, rgba(235, 10, 30, 0.05) 0%, transparent 50%) !important;
+}
+
+/* Car Background - Large & Visible */
+.hero-bg::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 800px;
+    height: 400px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400' fill='none'%3E%3C!-- Modern Car --%3E%3Cpath d='M100 250 L120 230 Q140 220 180 220 L280 220 Q300 210 320 220 L480 220 Q500 210 520 220 L620 220 Q640 220 660 230 L680 250 L700 260 Q710 265 710 280 L710 300 Q710 310 700 315 L680 320 Q670 325 650 325 L150 325 Q130 325 120 320 L100 315 Q90 310 90 300 L90 280 Q90 265 100 260 Z M180 280 Q180 265 195 265 Q210 265 210 280 Q210 295 195 295 Q180 295 180 280 Z M590 280 Q590 265 605 265 Q620 265 620 280 Q620 295 605 295 Q590 295 590 280 Z' fill='rgba(235,10,30,0.12)' stroke='rgba(235,10,30,0.25)' stroke-width='4'/%3E%3Cellipse cx='150' cy='240' rx='15' ry='10' fill='rgba(255,255,255,0.3)'/%3E%3Cellipse cx='650' cy='240' rx='15' ry='10' fill='rgba(255,255,255,0.3)'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.7;
+    z-index: 0;
+    animation: carFloat 6s ease-in-out infinite;
+}
+
+@keyframes carFloat {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.02);
+    }
+}
+
+/* Hero Content - Centered with High Z-Index */
+.hero-content {
+    max-width: 900px !important;
+    width: 100% !important;
+    padding: 0 var(--spacing-lg) !important;
+    z-index: 10 !important;
+    position: relative !important;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Enhanced Title - Much Bigger! */
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem) !important;
+    margin-bottom: var(--spacing-md) !important;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--text-primary) 50%, var(--color-gray) 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    line-height: 1.1 !important;
+    letter-spacing: -1px !important;
+    animation: fadeInUp 1s ease-out 0.2s backwards;
+}
+
+/* Enhanced Subtitle - Bigger */
+.hero-subtitle {
+    font-size: clamp(1.125rem, 2vw, 1.5rem) !important;
+    margin-bottom: var(--spacing-xl) !important;
+    font-weight: 500 !important;
+    line-height: 1.6 !important;
+    animation: fadeInUp 1s ease-out 0.4s backwards;
+}
+
+/* Quick Search with Animation */
+.quick-search {
+    max-width: 650px !important;
+    animation: fadeInUp 1s ease-out 0.6s backwards;
+}
+
+/* Enhanced Search Input */
+.search-input {
+    padding: var(--spacing-md) var(--spacing-lg) !important;
+    border: 2px solid rgba(235, 10, 30, 0.25) !important;
+    font-size: var(--font-size-lg) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+.search-input:focus {
+    box-shadow: 0 0 0 4px rgba(235, 10, 30, 0.1), 0 4px 12px rgba(235, 10, 30, 0.3) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Quick Search Button Enhancement */
+.quick-search .btn-primary {
+    min-width: 150px !important;
+    font-size: var(--font-size-lg) !important;
+    padding: var(--spacing-md) var(--spacing-xl) !important;
+    box-shadow: 0 4px 15px rgba(235, 10, 30, 0.4) !important;
+}
+
+.quick-search .btn-primary:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 6px 25px rgba(235, 10, 30, 0.6) !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .pwa-hero {
+        min-height: 500px !important;
+    }
+
+    .hero-bg::after {
+        width: 90%;
+        max-width: 500px;
+        height: 250px;
+    }
+
+    .hero-title {
+        font-size: 2rem !important;
+    }
+
+    .hero-subtitle {
+        font-size: 1.125rem !important;
+    }
+}

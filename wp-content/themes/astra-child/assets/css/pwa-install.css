@@ -1,0 +1,139 @@
+/* ========================================
+   PWA Install Banner Styles
+   ======================================== */
+
+.pwa-install-banner {
+    position: fixed;
+    bottom: -120px;
+    left: 0;
+    right: 0;
+    z-index: 10001;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.15);
+    border-top: 1px solid rgba(235, 10, 30, 0.2);
+    transition: bottom 0.3s ease;
+}
+
+.pwa-install-banner.visible {
+    bottom: 0;
+}
+
+/* Dark Mode */
+body.dark-mode .pwa-install-banner {
+    background: rgba(30, 30, 30, 0.95);
+    border-top-color: rgba(235, 10, 30, 0.3);
+}
+
+.install-banner-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.install-banner-icon {
+    flex-shrink: 0;
+}
+
+.install-banner-icon img {
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.install-banner-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.install-banner-text strong {
+    font-size: 1rem;
+    color: var(--text-primary, #1a1a1a);
+}
+
+.install-banner-text span {
+    font-size: 0.85rem;
+    color: var(--text-secondary, #666);
+}
+
+.install-banner-actions {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.install-btn {
+    background: linear-gradient(135deg, #eb0a1e 0%, #c00818 100%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.install-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(235, 10, 30, 0.4);
+}
+
+.dismiss-btn {
+    background: transparent;
+    color: var(--text-secondary, #666);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.dismiss-btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* Dark Mode Buttons */
+body.dark-mode .dismiss-btn {
+    color: #aaa;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .dismiss-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .install-banner-content {
+        flex-wrap: wrap;
+    }
+
+    .install-banner-text {
+        flex: 1 1 calc(100% - 70px);
+    }
+
+    .install-banner-actions {
+        width: 100%;
+        justify-content: stretch;
+    }
+
+    .install-btn,
+    .dismiss-btn {
+        flex: 1;
+    }
+}
+
+/* Hide when Bottom Nav is visible */
+@media (max-width: 768px) {
+    .pwa-install-banner.visible {
+        bottom: 60px;
+        /* Above bottom nav */
+    }
+}
