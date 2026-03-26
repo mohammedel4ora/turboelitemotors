@@ -100,6 +100,26 @@ body.dark-mode {
     --color-white: #F5F5F5;
 }
 
+/* Force Default Astra Elements to use Dark Mode Variables */
+body.dark-mode .site-header,
+body.dark-mode .site-footer,
+body.dark-mode .ast-builder-layout-element,
+body.dark-mode .site-header-primary-section-right {
+    background-color: var(--bg-primary) !important;
+}
+
+body.dark-mode .site-header a,
+body.dark-mode .site-footer a,
+body.dark-mode .site-header .menu-link,
+body.dark-mode .site-title a {
+    color: var(--text-primary) !important;
+}
+
+body.dark-mode .site-header a:hover,
+body.dark-mode .site-footer a:hover {
+    color: var(--color-primary-light) !important;
+}
+
 /* Apply Font Family Globally */
 body,
 button,

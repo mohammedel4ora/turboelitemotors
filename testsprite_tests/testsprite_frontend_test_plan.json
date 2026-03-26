@@ -1,0 +1,249 @@
+[
+  {
+    "id": "TC001",
+    "title": "Load homepage and verify header + hero are visible",
+    "description": "Verifies the public homepage loads successfully and key above-the-fold content is visible.",
+    "category": "Homepage Viewing",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"homepage header\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"hero section\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the middle of the homepage"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"main homepage content\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC002",
+    "title": "Scroll through homepage content",
+    "description": "Verifies the visitor can scroll and continue to see content sections as they move down the page.",
+    "category": "Homepage Viewing",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"homepage header\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the bottom of the homepage"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"footer\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the top of the homepage"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"hero section\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC003",
+    "title": "Use header navigation link from homepage",
+    "description": "Verifies clicking a header navigation link produces a visible navigation response on the page.",
+    "category": "Homepage Viewing",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"homepage header\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click on the first visible header navigation link"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"target section heading related to the clicked header link\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Scroll slightly to confirm the page position has changed"
+      }
+    ]
+  },
+  {
+    "id": "TC004",
+    "title": "Toggle Dark Mode on and verify dark styling is applied",
+    "description": "Verifies enabling Dark Mode changes the visible appearance of the page.",
+    "category": "Homepage Viewing",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Dark Mode toggle control\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Dark Mode\" toggle control"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Dark Mode enabled state indicator\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"page background in dark mode\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"header in dark mode\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC005",
+    "title": "Toggle Dark Mode on then off and verify light styling is restored",
+    "description": "Verifies Dark Mode can be toggled twice to return the page to its original (light) appearance.",
+    "category": "Homepage Viewing",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Dark Mode toggle control\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Dark Mode\" toggle control"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Dark Mode enabled state indicator\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Dark Mode\" toggle control again"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Dark Mode enabled state indicator\" is not visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"page background in light mode\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC006",
+    "title": "Verify test homepage loads for QA fallback access",
+    "description": "Verifies the dedicated test homepage route is accessible and renders content for QA/troubleshooting.",
+    "category": "Homepage Viewing",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /test_homepage.php"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/test_homepage.php\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"test homepage main content\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"test\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the bottom of the test homepage"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"test homepage footer or end-of-page content\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC007",
+    "title": "Add product to cart and complete checkout",
+    "description": "Verifies that a user can add a product to the cart, proceed to checkout, and place an order.",
+    "category": "E-commerce Flow",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /shop"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"grid of products\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Add to cart\" button for the first available product"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a \"View cart\" link or success message appears"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /checkout"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the checkout form is visible"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the required billing details with dummy test data (Name: Test, Email: test@example.com, Address, etc.)"
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Place order\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the \"Order received\" or success page is visible"
+      }
+    ]
+  }
+]

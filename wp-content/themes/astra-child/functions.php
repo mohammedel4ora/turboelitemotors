@@ -34,8 +34,8 @@ function astra_child_enqueue_styles() {
 
     // Homepage PWA styles (only on homepage template)
     if (is_page_template('template-homepage-pwa.php')) {
-        wp_enqueue_style('layout-fix', get_stylesheet_directory_uri() . '/assets/css/layout-fix.css', array('astra-child-theme'), '1.0.0');
-        wp_enqueue_style('homepage-pwa', get_stylesheet_directory_uri() . '/assets/css/homepage-pwa.css', array('layout-fix'), '1.0.0');
+        wp_enqueue_style('layout-fix', get_stylesheet_directory_uri() . '/assets/css/layout-fix.css', array('astra-child-theme'), '2.0.0');
+        wp_enqueue_style('homepage-pwa', get_stylesheet_directory_uri() . '/assets/css/homepage-pwa.css', array('layout-fix'), '2.0.0');
         wp_enqueue_style('hero-enhanced', get_stylesheet_directory_uri() . '/assets/css/hero-enhanced.css', array('homepage-pwa'), '1.0.0');
         wp_enqueue_style('ymm-enhanced', get_stylesheet_directory_uri() . '/assets/css/ymm-enhanced.css', array('hero-enhanced'), '1.0.0');
         wp_enqueue_style('products-enhanced', get_stylesheet_directory_uri() . '/assets/css/products-enhanced.css', array('ymm-enhanced'), '1.0.0');

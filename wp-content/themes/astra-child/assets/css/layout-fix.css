@@ -10,10 +10,11 @@
     padding: 0;
 }
 
-/* Hide Astra Sidebar */
-.page-template-template-homepage-pwa #secondary,
-.page-template-template-homepage-pwa .widget-area,
-.page-template-template-homepage-pwa aside {
+/* Hide Astra Sidebar (but NOT footer widget areas) */
+.page-template-template-homepage-pwa #secondary {
+    display: none !important;
+}
+.page-template-template-homepage-pwa .site-content aside {
     display: none !important;
 }
 

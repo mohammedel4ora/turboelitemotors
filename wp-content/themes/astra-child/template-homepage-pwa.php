@@ -12,9 +12,9 @@ if (!defined('ABSPATH')) {
 // Force Full Width Layout (No Sidebar)
 add_filter('astra_page_layout', function() { return 'no-sidebar'; });
 
-// Remove default Astra content wrapper
-remove_action('astra_content_before', 'astra_container_wrap_open');
-remove_action('astra_content_after', 'astra_container_wrap_close');
+// Disabled: Keep default Astra content wrapper for proper header/footer integration
+// remove_action('astra_content_before', 'astra_container_wrap_open');
+// remove_action('astra_content_after', 'astra_container_wrap_close');
 
 // Custom PWA Header Helper
 get_header();
@@ -176,33 +176,7 @@ get_header();
 </section>
 
 
-    <!-- Mobile Bottom Navigation -->
-    <nav class="pwa-bottom-nav">
-        <a href="<?php echo esc_url(home_url('/')); ?>" class="nav-item active">
-            <span class="icon">🏠</span>
-            <span class="label">الرئيسية</span>
-        </a>
-        <a href="#" class="nav-item search-trigger">
-            <span class="icon">🔍</span>
-            <span class="label">بحث</span>
-        </a>
-        <a href="<?php echo esc_url(wc_get_cart_url()); ?>" class="nav-item cart-trigger">
-            <span class="icon">
-                🛒
-                <?php 
-                $count = WC()->cart->get_cart_contents_count();
-                if ($count > 0) {
-                    echo '<span class="cart-count">' . $count . '</span>';
-                }
-                ?>
-            </span>
-            <span class="label">السلة</span>
-        </a>
-        <a href="<?php echo esc_url(get_permalink(wc_get_page_id('myaccount'))); ?>" class="nav-item">
-            <span class="icon">👤</span>
-            <span class="label">حسابي</span>
-        </a>
-    </nav>
+    <!-- Default Footer will load below -->
 
 </div><!-- .pwa-page-wrapper -->
 

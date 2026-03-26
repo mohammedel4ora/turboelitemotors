@@ -73,7 +73,7 @@ function alrajhi_astra_cart_sidebar() {
             <button class="close-cart-sidebar">&times;</button>
         </div>
         <div class="cart-sidebar-content">
-            <?php the_widget('WC_Widget_Cart', array('title' => '')); ?>
+            <?php the_widget('WC_Widget_Cart', 'title='); ?>
         </div>
     </div>
     <?php

@@ -1,365 +1,8 @@
 /* ========================================
-   PWA HEADER
-   ======================================== */
-.pwa-header {
-    background: var(--bg-primary);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 15px 0;
-    transition: all 0.3s ease;
-}
-
-.header-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* Logo */
-.logo-link {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    color: var(--text-primary);
-    max-width: 100%;
-}
-
-.logo-icon {
-    width: var(--logo-size, 35px) !important;
-    height: var(--logo-size, 35px) !important;
-    min-width: var(--logo-size, 35px);
-    /* Prevent shrinking */
-    color: var(--color-primary);
-}
-
-.logo-text {
-    display: flex;
-    flex-direction: column;
-}
-
-.logo-text h1 {
-    font-size: 1.1rem !important;
-    font-weight: 900 !important;
-    margin: 0 !important;
-    line-height: 1 !important;
-    letter-spacing: -0.5px !important;
-    white-space: nowrap;
-    /* Prevent wrapping */
-}
-
-.logo-text span {
-    font-size: 0.65rem !important;
-    color: var(--text-secondary);
-    font-weight: 600;
-    line-height: 1.2 !important;
-    white-space: nowrap;
-}
-
-/* Dark Mode: Logo Fix */
-body.dark-mode .logo-text h1,
-body.dark-mode .logo-link {
-    color: white !important;
-}
-
-/* Navigation */
-.pwa-nav {
-    display: flex;
-    gap: 25px;
-}
-
-.nav-link {
-    font-weight: 700;
-    color: var(--text-secondary);
-    text-decoration: none;
-    transition: color 0.2s;
-    font-size: 1rem;
-}
-
-.nav-link.active,
-.nav-link:hover {
-    color: var(--color-primary);
-}
-
-/* Header Actions */
-.header-actions {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-
-.btn-icon {
-    background: transparent;
-    border: none;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    cursor: pointer;
-    position: relative;
-    color: var(--text-primary);
-    transition: background 0.2s;
-}
-
-.btn-icon:hover {
-    background: rgba(235, 10, 30, 0.05);
-    color: var(--color-primary);
-}
-
-.btn-icon svg {
-    width: var(--header-icon-size, 24px);
-    height: var(--header-icon-size, 24px);
-}
-
-/* Mobile Toggle Hidden by Default */
-.mobile-menu-toggle {
-    display: none !important;
-}
-
-/* Badge */
-.badge {
-    position: absolute;
-    top: -2px;
-    right: -2px;
-    background: var(--color-primary);
-    color: white;
-    font-size: 0.7rem;
-    font-weight: 800;
-    min-width: 18px;
-    height: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 9px;
-    border: 2px solid var(--bg-primary);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .pwa-nav {
-        display: none;
-    }
-
-    .mobile-menu-toggle {
-        display: flex !important;
-    }
-
-    .logo-text {
-        display: none;
-        /* Icon only on small screens */
-    }
-}
-
-
-/* ========================================
-   PWA FOOTER
-   ======================================== */
-/* Fail-safe: Hide legacy injected toggle on this page */
-#darkModeToggle {
-    display: none !important;
-}
-
-.pwa-footer {
-    background: var(--color-dark);
-    color: var(--text-secondary);
-    /* Lighter gray for text */
-    padding: 60px 0 80px;
-    /* Added excessive padding for bottom nav */
-    margin-top: 60px;
-    border-top: 3px solid var(--color-primary);
-    position: relative;
-}
-
-/* Islamic Pattern Overlay for Footer */
-.pwa-footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    opacity: 0.5;
-    pointer-events: none;
-}
-
-
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
-    margin-bottom: 40px;
-    position: relative;
-    z-index: 2;
-}
-
-.footer-title {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 800;
-    margin-bottom: 15px;
-    letter-spacing: -0.5px;
-}
-
-.footer-subtitle {
-    color: white;
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.footer-subtitle::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 40px;
-    height: 3px;
-    background: var(--color-primary);
-    border-radius: 2px;
-}
-
-.footer-section p {
-    line-height: 1.8;
-    margin-bottom: 20px;
-    opacity: 0.8;
-}
-
-/* Social Links */
-.social-links {
-    display: flex;
-    gap: 15px;
-}
-
-.social-link {
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.social-link:hover {
-    background: var(--color-primary);
-    transform: translateY(-3px);
-}
-
-/* Footer Links */
-.footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-links li {
-    margin-bottom: 12px;
-}
-
-.footer-links a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.footer-links a:hover {
-    color: var(--color-primary);
-    transform: translateX(-5px);
-    /* Move left for RTL */
-}
-
-/* Contact Info */
-.contact-info {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.contact-info li {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    margin-bottom: 15px;
-    color: var(--text-secondary);
-}
-
-.contact-info .icon {
-    font-size: 1.2rem;
-}
-
-/* Footer Bottom */
-.footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    font-size: 0.9rem;
-    position: relative;
-    z-index: 2;
-}
-
-.payment-icons {
-    display: flex;
-    gap: 15px;
-    opacity: 0.7;
-    filter: grayscale(1);
-    transition: filter 0.3s;
-}
-
-.payment-icons:hover {
-    filter: grayscale(0);
-    opacity: 1;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .footer-subtitle::after {
-        right: 50%;
-        transform: translateX(50%);
-    }
-
-    .social-links {
-        justify-content: center;
-    }
-
-    .footer-links a:hover {
-        transform: translateX(0);
-    }
-
-    .contact-info li {
-        justify-content: center;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-/* ========================================
-   HOMEPAGE PWA STYLES
+   HOMEPAGE CONTENT STYLES
+   ========================================
+   Header & Footer styles removed to allow 
+   default Astra header/footer to render.
    ======================================== */
 
 /* Body Background with Subtle Pattern */
@@ -445,7 +88,6 @@ body.dark-mode.page-template-template-homepage-pwa {
     display: flex;
     gap: var(--spacing-sm);
     position: relative;
-    /* For search icon positioning if needed */
 }
 
 .search-input {
@@ -508,7 +150,6 @@ body.dark-mode.page-template-template-homepage-pwa {
     padding: var(--spacing-lg);
     border-radius: var(--radius-xl);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-    /* Enhanced Shadow */
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
@@ -522,7 +163,6 @@ body.dark-mode.page-template-template-homepage-pwa {
     min-width: 200px;
     transition: all var(--transition-base);
     height: 48px;
-    /* Touch friendly */
 }
 
 .ymm-widget-wrapper select:focus {
@@ -594,17 +234,14 @@ body.dark-mode.page-template-template-homepage-pwa {
     overflow: hidden;
     transition: transform var(--transition-base), box-shadow var(--transition-base);
     border: 1px solid rgba(0, 0, 0, 0.05);
-    /* Softer border */
     display: flex;
     flex-direction: column;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-    /* Soft shadow */
 }
 
 .product-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-    /* Elevated shadow */
     border-color: rgba(235, 10, 30, 0.2);
 }
 
@@ -613,7 +250,6 @@ body.dark-mode.page-template-template-homepage-pwa {
     width: 100%;
     aspect-ratio: 1;
     background: white;
-    /* Always white for product contrast */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -709,7 +345,7 @@ body.dark-mode.page-template-template-homepage-pwa {
 }
 
 /* Buttons - Full Width Single Button */
-.btn {
+.pwa-page-wrapper .btn {
     padding: 0.75rem 1rem;
     font-weight: 700;
     border-radius: var(--radius-md);
@@ -725,7 +361,7 @@ body.dark-mode.page-template-template-homepage-pwa {
     height: 48px;
 }
 
-.btn-primary {
+.pwa-page-wrapper .btn-primary {
     background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
     color: white;
     border: none;
@@ -733,26 +369,26 @@ body.dark-mode.page-template-template-homepage-pwa {
     font-weight: 800;
 }
 
-.btn-primary:hover:not(:disabled) {
+.pwa-page-wrapper .btn-primary:hover:not(:disabled) {
     background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
     box-shadow: 0 5px 15px rgba(235, 10, 30, 0.4);
     transform: translateY(-2px);
 }
 
-.btn-primary:disabled {
+.pwa-page-wrapper .btn-primary:disabled {
     opacity: 0.5;
     cursor: not-allowed;
     background: var(--color-gray);
     box-shadow: none;
 }
 
-.btn-secondary {
+.pwa-page-wrapper .btn-secondary {
     background: var(--bg-secondary);
     color: var(--text-primary);
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.btn-secondary:hover {
+.pwa-page-wrapper .btn-secondary:hover {
     background: var(--bg-primary);
     border-color: var(--color-primary);
 }
@@ -791,16 +427,8 @@ body.dark-mode.page-template-template-homepage-pwa {
     margin-top: var(--spacing-xl);
 }
 
-/* Bottom Navigation moved to header-pwa.css */
-
-
 /* Responsive Design */
 @media (max-width: 768px) {
-    .pwa-bottom-nav {
-        display: flex;
-        /* Show on Mobile */
-    }
-
     .hero-title {
         font-size: var(--font-size-2xl);
     }
@@ -844,25 +472,10 @@ body.dark-mode.page-template-template-homepage-pwa {
         font-size: 0.9rem;
         padding: 0.45rem 0.75rem;
         height: 44px;
-        /* Larger touch target */
     }
 
     .product-actions .btn-primary {
         font-weight: 700;
-    }
-
-    /* Hide standard Header Nav on Mobile since we have Bottom Nav */
-    .mobile-menu-toggle {
-        display: none !important;
-        /* Hide Hamburger too? Yes, relying on bottom nav + account icon in header? Or keep header clean */
-    }
-
-    /* KEEP Hamburger if there are other pages not in bottom nav. But request asked to make it app-like. 
-       Usually apps don't have hamburger AND bottom nav. 
-       Let's keep Hamburger for now as "More" but maybe simplify the header actions. 
-    */
-    .mobile-menu-toggle {
-        display: flex !important;
     }
 }
 

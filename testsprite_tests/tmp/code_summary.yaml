@@ -1,0 +1,30 @@
+version: "2"
+type: frontend
+tech_stack:
+  - wordpress
+  - php
+  - javascript
+  - css
+  - astra-theme
+routes:
+  - path: /
+    file: index.php
+    auth_required: false
+    description: User facing homepage
+  - path: /test_homepage.php
+    file: test_homepage.php
+    auth_required: false
+    description: Test homepage script
+features:
+  - name: Homepage Viewing
+    description: The user visits the homepage to view the website, interactions like dark mode and header navigation.
+    files:
+      - wp-content/themes/astra-child/template-homepage-pwa.php
+      - wp-content/themes/astra-child/assets/css/homepage-pwa.css
+    entry_route: /
+    user_interactions:
+      - Navigate to site root
+      - Scroll through the homepage
+    api_calls: []
+    auth_required: false
+known_limitations: []

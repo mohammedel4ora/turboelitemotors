@@ -3,9 +3,9 @@
    ======================================== */
 
 /* Hide Default Astra Header on PWA Page */
-.page-template-template-homepage-pwa .site-header {
+/* .page-template-template-homepage-pwa .site-header {
     display: none !important;
-}
+} */
 
 /* Custom Header Container */
 .pwa-header {

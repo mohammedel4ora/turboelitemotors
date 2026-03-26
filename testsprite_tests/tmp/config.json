@@ -1,0 +1,20 @@
+{
+  "status": "commited",
+  "type": "frontend",
+  "scope": "codebase",
+  "localEndpoint": "http://localhost:10004",
+  "executionArgs": {
+    "projectName": "turbo-elite-motors",
+    "projectPath": "c:\\Users\\Mada\\Local Sites\\turbo-elite-motors\\app\\public",
+    "testIds": [
+      "TC007"
+    ],
+    "additionalInstruction": "Pay close attention to WooCommerce checkout fields. Ensure all required billing fields such as Name, Country, Address, City, Phone, and Email are filled with dummy data before submitting.",
+    "serverMode": "production",
+    "envs": {
+      "API_KEY": "sk-user-3zjJm-pTkHL3QpK0kTLw5Hya1eO4si6SAMkbZ955V32pTbS0kUlvnd14RqPyWmPeaXGwiyYytbGNujML8VU_Rx-ty7XRKRlFX3BzCxQFEhcGdvDldMW1XgZmsuu32D5w88k"
+    }
+  },
+  "serverPort": 50664,
+  "proxy": "http://48d7e65c-39ec-41a0-972a-2c6d74552cc9:ZtRox4aOqq984ngs85u5CjXgmZqCRWao@tun.testsprite.com:8080"
+}
